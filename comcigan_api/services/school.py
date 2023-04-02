@@ -13,3 +13,10 @@ async def findSchool(name: str) -> AsyncSchool | SchoolNotFoundError | MultipleS
             return SchoolNotFoundError(name)
         else:
             return UncaughtError(error)
+        
+async def getClasses(school: AsyncSchool):
+    grade_len = len(school._week_data)
+    result = {}
+    for grade in range(1, grade_len+1):
+        result[grade] = [f'{grade}-{i}' for i in range(1, len(school._week_data[grade-1]))]
+    return result
