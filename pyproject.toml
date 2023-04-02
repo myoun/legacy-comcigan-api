@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "comcigan-api"
+version = "0.1.0"
+description = ""
+authors = ["myoun <aiden080605@gmail.com>"]
+readme = "README.md"
+packages = [{include = "comcigan_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+comcigan = "^1.4.4"
+fastapi = "^0.95.0"
+async-lru = "^2.0.2"
+
+
+[tool.poetry.group.dev.dependencies]
+uvicorn = "^0.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
